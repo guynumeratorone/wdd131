@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head> 
+  <meta charset="utf-8" />
+  <title>Your Name: WDD 131 portfolio</title>
+  <meta name="description" content="Portfolio for WDD 131 — projects, exercises, and notes." />
+  <meta name="author" content="Your Name" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Name: WDD 131 portfolio</h1>
+    <p class="subtitle">A collection of course work and exercises for Web Design & Development 131.</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About this site</h2>
+      <p>This site will host my WDD 131 assignments, examples, and notes. I will add pages and project links here as the semester progresses.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects / Assignments</h2>
+      <ul>
+        <li><a href="#">Project 1 — placeholder</a></li>
+        <li><a href="#">Project 2 — placeholder</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Joe Allen — WDD 131</p>
+  </footer>
+
+  <script>
+    // small nicety: auto update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  
+</body>
+</html>
