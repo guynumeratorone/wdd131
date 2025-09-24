@@ -1,0 +1,123 @@
+/* reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --page-bg: #f8f8f9;
+  --frame-border: #dcdcdc;
+  --card-bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --accent-blue: #006EB6;
+  --max-width: 700px;
+  --card-pad: 64px;
+}
+
+/* page basics */
+html,body { height: 25%; }
+body {
+  background: var(--page-bg);
+  font-family: "Times New Roman", Times, serif; /* default font per instructions */
+  font-size: 20px;            /* assignment: default font-size = 20px */
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;          /* assignment recommends ~1.5 */
+  padding: 28px;
+}
+
+.ms-frame {
+  padding: 0;                    
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
+}
+
+/* white "paper" card */
+.ms-card {
+  width: 75%;
+  max-width: var(--max-width);
+  background: var(--card-bg);
+  padding: var(--card-pad);
+  margin: 0 auto;
+  text-align: center; /* titles and main block are centered */
+}
+
+/* header / title area */
+.ms-header { margin-bottom: 28px; }
+
+.ms-title {
+  font-family: "Times New Roman", Times, serif; /* ensure Times is used */
+  font-size: 40px;               /* display size — adjust up/down if needed */
+  line-height: 1.0;
+  letter-spacing: 4px;           /* spaced-out uppercase letters */
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+/* subtitle in the blue requested by the assignment */
+.ms-subtitle {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--accent-blue);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+/* thin rule under subtitle */
+.ms-rule {
+  width: 45%;
+  height: 1px;
+  background: #e6e6e6;
+  border: none;
+  margin: 0 auto 28px;
+}
+
+/* content column: centered but paragraphs left-aligned */
+.ms-body {
+  max-width: 600px;  /* assignment: content limited to 600px */
+  margin: 0 auto;
+  text-align: left;  /* paragraphs left aligned */
+  font-size: 20px;   /* inherits default */
+  color: var(--text);
+}
+
+/* first paragraph spacing */
+.ms-intro { margin-bottom: 20px; }
+
+/* italic lead */
+.ms-em {
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+/* numbered list spacing and comfortable wrap alignment */
+.ms-list {
+  margin-left: 2.2rem; /* visual indent */
+  padding-left: 0;
+}
+
+.ms-list li {
+  margin: 1.6rem 0;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+/* logo centered, smaller by request (desktop size 120px) */
+.ms-footer {
+  display:flex;
+  justify-content:center;
+  margin-top: 48px;
+}
+
+.logo {
+  display: block;
+  margin: 36px auto 0;
+  width: 160px;   /* change value to scale the logo */
+  height: auto;
+}
+
+
+
