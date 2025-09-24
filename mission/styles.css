@@ -107,7 +107,7 @@ body {
   font-size: 20px;
 }
 
-/* logo centered, smaller by request (desktop size 120px) */
+
 .ms-footer {
   display:flex;
   justify-content:center;
@@ -117,7 +117,7 @@ body {
 .logo {
   display: block;
   margin: 36px auto 0;
-  width: 160px;   /* change value to scale the logo */
+  width: 160px;   
   height: auto;
 }
 
