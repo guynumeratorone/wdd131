@@ -35,12 +35,14 @@ body {
 
 /* white "paper" card */
 .ms-card {
-  width: 75%;
+  width: 100%;
   max-width: var(--max-width);
   background: var(--card-bg);
   padding: var(--card-pad);
   margin: 0 auto;
-  text-align: center; /* titles and main block are centered */
+  text-align: center;
+  border: 1px solid var(--frame-border);   /* border now hugs the white card exactly */
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);     /* optional — keep if you like the subtle shadow */
 }
 
 /* header / title area */
