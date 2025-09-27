@@ -181,23 +181,21 @@ body {
 /* -------------------------
    DARK THEME (toggle class .dark on body)
    ------------------------- */
+/* dark theme: assignment required #333 background + white text; accessible blue for subtitle */
 body.dark {
-  /* colors per assignment + safe defaults */
-  --page-bg: #333333;       /* page background per assignment */
-  --card-bg: #2a2a2a;       /* card a bit darker than page */
-  --text: #ffffff;          /* white text */
-  --muted: #bfc9d3;
+  --page-bg: #333;        
+  --card-bg: #2a2a2a;
+  --text: #ffffff;
   --frame-border: #444444;
-  /* subtitle / accent — white guarantees contrast; replace with brand blue only if contrast >= 4 */
-  --accent-blue: #ffffff;
+  --accent-blue: #8fc7ff;
 }
 
-/* make sure elements use variables (your file already does this) */
-body, .ms-card, .ms-rule, #theme-select {
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-}
-
-/* subtitle color specifically in dark mode (extra safe): */
+/* subtitle color in dark mode (uses the accessible blue) */
 body.dark .ms-subtitle {
   color: var(--accent-blue);
+}
+
+/* ensure ms-card still uses the variable */
+.ms-card {
+  background: var(--card-bg);
 }
