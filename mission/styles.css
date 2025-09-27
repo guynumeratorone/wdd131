@@ -13,19 +13,20 @@
 }
 
 /* page basics */
-html,body { height: 25%; }
+html, body { height: 100%; } /* changed from 25% to 100% */
 body {
   background: var(--page-bg);
   font-family: "Times New Roman", Times, serif; /* default font per instructions */
   font-size: 20px;            /* assignment: default font-size = 20px */
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-  line-height: 1;          /* assignment recommends ~1.5 */
+  line-height: 1.5;          /* more readable line-height */
   padding: 28px;
 }
 
+/* --- existing styles kept --- */
 .ms-frame {
-  padding: 0;                    
+  padding: 0;
   min-height: calc(100vh - 72px);
   display: flex;
   align-items: flex-start;
@@ -33,7 +34,7 @@ body {
   background: transparent;
 }
 
-/* white "paper" card */
+/* white "paper" card (uses --card-bg so dark theme can override it) */
 .ms-card {
   width: 100%;
   max-width: var(--max-width);
@@ -107,7 +108,6 @@ body {
   font-size: 20px;
 }
 
-
 .ms-footer {
   display:flex;
   justify-content:center;
@@ -117,9 +117,87 @@ body {
 .logo {
   display: block;
   margin: 36px auto 0;
-  width: 160px;   
+  width: 160px;
   height: auto;
 }
 
+/* -------------------------
+   THEME SELECT + LAYOUT TWEAKS
+   ------------------------- */
 
+/* layout wrapper for header top (keeps title/subtitle stacked, select underneath on small screens) */
+.ms-header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
 
+.ms-theme {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;                   /* sit above the page */
+  background: var(--card-bg);      /* matches card so it sits nicely */
+  border: 1px solid var(--frame-border);
+  padding: 6px 8px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  backdrop-filter: blur(4px);      /* subtle blur behind it (optional) */
+}
+
+/* keep select small & tidy */
+.ms-theme #theme-select {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+/* visually-hidden helper (re-used) */
+.visually-hidden{
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* small tidy styling for the theme select */
+#theme-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--frame-border);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* -------------------------
+   DARK THEME (toggle class .dark on body)
+   ------------------------- */
+body.dark {
+  /* colors per assignment + safe defaults */
+  --page-bg: #333333;       /* page background per assignment */
+  --card-bg: #2a2a2a;       /* card a bit darker than page */
+  --text: #ffffff;          /* white text */
+  --muted: #bfc9d3;
+  --frame-border: #444444;
+  /* subtitle / accent — white guarantees contrast; replace with brand blue only if contrast >= 4 */
+  --accent-blue: #ffffff;
+}
+
+/* make sure elements use variables (your file already does this) */
+body, .ms-card, .ms-rule, #theme-select {
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+/* subtitle color specifically in dark mode (extra safe): */
+body.dark .ms-subtitle {
+  color: var(--accent-blue);
+}
