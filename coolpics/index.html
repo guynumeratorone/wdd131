@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cool Pics 📷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A responsive photography gallery (Cool Pics)" />
+  <meta name="author" content="Joe Allen" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" 
+  rel="stylesheet">
+  <link rel="stylesheet" href="coolpics.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Cool Pics 📷</h1>
+
+      <nav aria-label="Primary navigation">
+        <a class="home-link" href="../">← Back to portfolio</a>
+        <button id="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="hidden" role="menu">
+          <li role="none"><a role="menuitem" href="#">Home</a></li>
+          <li role="none"><a role="menuitem" href="#">About</a></li>
+          <li role="none"><a role="menuitem" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="sr-only">Photography Gallery</h2>
+
+    <section class="gallery" aria-label="Photo gallery">
+      <!-- Nine example thumbnails (replace sources with your different images) -->
+      <figure>
+        <button class="thumb-btn" data-full="images/norris-full.jpeg" aria-label="Open photo 1">
+          <img src="images/norris-sm.jpeg" alt="Portrait of Norris — thumbnail" loading="lazy" 
+          width="800" height="600">
+        </button>
+      </figure>
+
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg" 
+        aria-label="Open photo 2"><img src="images/norris-sm.jpeg" 
+        alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+        height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg"
+         aria-label="Open photo 3"><img src="images/norris-sm.jpeg" 
+         alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+         height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg"
+         aria-label="Open photo 4"><img src="images/norris-sm.jpeg" 
+         alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+         height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg"
+       aria-label="Open photo 5"><img src="images/norris-sm.jpeg" 
+       alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+       height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg" 
+        aria-label="Open photo 6"><img src="images/norris-sm.jpeg" 
+        alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+        height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg" 
+        aria-label="Open photo 7"><img src="images/norris-sm.jpeg"
+        alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+        height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg" 
+        aria-label="Open photo 8"><img src="images/norris-sm.jpeg" 
+        alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+        height="600"></button></figure>
+      <figure><button class="thumb-btn" data-full="images/norris-full.jpeg" 
+        aria-label="Open photo 9"><img src="images/norris-sm.jpeg" 
+        alt="Portrait of Norris — thumbnail" loading="lazy" width="800" 
+        height="600"></button></figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Joe Allen — Cool Pics</p>
+  </footer>
+
+  <!-- Lightbox modal: do NOT include "hidden" here; JS toggles .visible -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true"
+   aria-label="Expanded photo view">
+    <button id="lb-close" class="lb-close" aria-label="Close">✕</button>
+    <img id="lb-image" src="" alt="">
+  </div>
+
+  <script src="coolpics.js" defer></script>
+</body>
+</html>
