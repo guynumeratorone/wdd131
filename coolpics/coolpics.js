@@ -14,7 +14,7 @@ if (menuBtn && navLinks) {
 function handleResize() {
   if (window.innerWidth >= 1000) {
     // Always show menu on large screens
-    navLinks.classList.remove('hide');
+    navLinks.classList.remove('hide'); 
     menuBtn.setAttribute('aria-expanded', 'false');
   } else {
     // On small screens, keep menu hidden until clicked
