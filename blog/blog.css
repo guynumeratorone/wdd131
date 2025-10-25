@@ -1,0 +1,213 @@
+:root{
+  --gold:#EFC69B;
+  --red:#AF1B3F;
+  --ink:#473144;
+  --max:1100px;
+}
+
+*{box-sizing:border-box}
+html{font-size:16px}
+body{
+  margin:0;
+  font-family:Helvetica, Arial, sans-serif; /* body font */
+  color:var(--ink);
+  line-height:1.5;
+}
+
+header, main, footer{
+  width:100%;
+  max-width:var(--max);
+  margin-inline:auto;
+  padding-inline:1rem;
+}
+
+header{ padding-block: 0 .25rem; } /* no border; nav handles the lines */
+
+/* page title sizing + spacing */
+h1{
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+  text-align: center;
+  margin: 2rem 0 1rem;   /* top space above title, small space below */
+}
+/* nav sizing + alignment to match mockup */
+nav{
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding-block: .75rem;
+}
+
+nav ul{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: end;              /* push links to the right */
+  justify-items: end;                /* align each cell’s content to the right */
+  gap: 0;                            /* separators handle spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul{ gap: 1.25rem; }   /* spacing between links */
+nav li{ padding: .5rem 0; } /* no borders = no pipes */
+
+nav a{
+  text-decoration: none;
+  color: var(--red);
+  font-weight: 600;
+  font-size: 1.125rem;               /* larger than body text */
+  line-height: 1;                    /* tighten line height for better vertical centering */
+}
+nav a:hover,
+nav a:focus{ text-decoration: underline; }
+
+
+main{ padding-block:0rem 2rem; }
+
+/* skip to content (keyboard users) */
+.skiptocontent a{
+  position: absolute;
+  left: 10rem;          /* left edge of the viewport */
+  z-index: 1000;
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--gold);
+  padding: .5rem .75rem;
+  text-decoration: none;
+  border-radius: .25rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
+}
+.skiptocontent a:focus,
+.skiptocontent a:focus-visible{
+  top: 0;              /* move on-screen when focused */
+  outline: none;       /* border acts as focus ring */
+}
+
+
+/* scaffold for the article two-column grid you’ll build in Step 4 */
+.article-grid{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  gap:1rem;
+  align-items:start;
+  margin-block:1rem 2rem;
+}
+
+/* article grid polish */
+.article-grid{
+  grid-template-columns: 240px 1fr;
+  gap: 1rem 1.25rem;
+}
+.details div{ margin-bottom: .35rem; }
+.cover img{ display:block; max-width:100%; height:auto; }
+
+
+.details{
+  margin:0;
+}
+.details dt{ font-weight:700 }
+.details dd{ margin:0 0 .5rem 0 }
+
+footer{
+  border-top:2px solid var(--ink);
+  padding-block:1rem 2rem;
+  text-align:center;
+}
+/* meta + tags */
+.meta{ margin:.25rem 0 0; color:#555; font-size:.95rem }
+.tags{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem }
+.tags span{ background:var(--gold); padding:.15rem .5rem; border-radius:.25rem }
+
+
+/* filter form + placement */
+#filters{
+  grid-column: 2;        /* right column */
+  align-self: start;
+  position: sticky;
+  top: 6.5rem;           /* stays tucked under the header while scrolling */
+  margin: 0;             /* no layout push on the grid row */
+  transform: translateY(1rem);  /* debugg */
+  will-change: transform;
+}
+
+#filters fieldset{
+  border: 2px solid var(--gold);
+  background: #fff;
+  padding: .85rem;
+}
+#filters label{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  margin:.5rem 0;
+}
+
+
+/* page grid: articles left / filters right */
+main{
+  display: grid;
+  grid-template-columns: 1fr 280px; /* articles get the big left column */
+  gap: 0rem;
+  align-items: start;
+}
+
+/* column placement */
+#reviews{ grid-column: 1; }
+#filters{ grid-column: 2; }
+
+/* --- top-alignment resets for the first review --- */
+#reviews{
+  margin-top: -12.8rem;       /* no extra space above the column */
+  padding-top: 0;       /* prevent margin-collapsing from children */
+  display: flow-root;   /* new BFC also stops collapsing */
+}
+
+/* first article: remove any top spacing from the article, header, and H2 */
+#reviews > .review:first-of-type{ margin-top: 0; padding-top: 0; }
+#reviews > .review:first-of-type > header{ margin: 0; padding: 0; }
+#reviews > .review:first-of-type > header > h2{ margin-top: -.25rem; }
+
+/* inner grid: no top gap on the first article */
+#reviews > .review:first-of-type .article-grid{ margin-top: 0; }
+
+/* general review title style */
+.review > header > h2{
+  font-family: "Lora", serif;
+  font-weight: 600;
+  color: #9b1131;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  margin: .15rem 0 .5rem; /* small top margin for non-first articles */
+}
+
+
+/* responsive */
+@media (max-width: 700px){
+  /* collapse page grid on small screens */
+  main{
+    display: block;
+  }
+  #filters,
+  #reviews{
+    grid-column: auto; /* harmless when main is block */
+  }
+
+  /* some breathing room on mobile */
+  #filters{ margin-bottom: 1rem; }
+
+  /* article grid becomes single column */
+  .article-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* nav: three equal columns that stretch full width */
+  nav ul{
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: stretch;
+    justify-items: end;
+  }
+}
+
+
+

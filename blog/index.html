@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kids Read For Fun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Family-friendly book review blog with plot, characters, and age-appropriateness notes." />
+  <meta name="author" content="Your Name" />
+  <link rel="stylesheet" href="blog.css" />
+   <script src="blog.js" defer></script>
+</head>
+<body>
+  <header>
+  <div class="skiptocontent">
+    <a href="#maincontent">Skip to main content</a>
+  </div>
+    <h1>Kids Read For Fun</h1>
+    <nav>
+  <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#filters">Search</a></li>
+  </ul>
+    </nav>
+  </header>
+
+<main id="maincontent" tabindex="-1">
+    <!-- Filter form -->
+<form id="filters" aria-label="Filters">
+  <fieldset>
+    <legend>Filter reviews</legend>
+    <label>
+      Sort:
+      <select id="sort" name="sort">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="rating">Highest rating</option>
+        <option value="title">Title A–Z</option>
+      </select>
+    </label>
+
+    <label>
+      Age:
+      <select id="level" name="level">
+        <option value="">All</option>
+        <option>Early Reader</option>
+        <option>Middle Grade</option>
+        <option>Young Adult</option>
+      </select>
+    </label>
+
+    <label>
+      Genre:
+      <select id="genre" name="genre">
+        <option value="">All</option>
+        <option>Fantasy</option>
+        <option>Adventure</option>
+        <option>Classic</option>
+        <option>Mystery</option>
+      </select>
+    </label>
+    <label>
+      Rating:
+      <select id="minRating" name="minRating">
+        <option value="0">Any</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+  </fieldset>
+</form>
+  <!-- Reviews -->
+  <section aria-label="Latest Reviews" id="reviews">
+    <!-- Review #1 -->
+    <article class="review" data-genre="Classic" data-level="Middle Grade" data-rating="5" data-year="1952">
+      <header>
+        <h2>Septimus Heap Book One: Magyk</h2>
+      </header>
+      <div class="article-grid">
+        <dl class="details">
+          <div><dd>July 5, 2022</dd></div>
+          <div><dd>10-14</dd></div>
+          <div><dd>Fantasy</dd></div>
+          <div><dd>★★★★</dd></div>
+        </dl>
+        <div class="content">
+          <figure class="cover">
+            <img src="https://picsum.photos/300/420?random=11" alt="Illustrated cover resembling Charlotte’s Web" width="300" height="420" loading="lazy">
+            <figcaption>If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.</figcaption>
+          </figure>
+
+        </div>
+      </div>
+      <footer class="tags">
+        <span>#friendship</span> <span>#animals</span> <span>#classic</span>
+      </footer>
+    </article>
+
+    <!-- Review #2 -->
+    <article class="review" data-genre="Fantasy" data-level="Young Adult" data-rating="4" data-year="1997">
+      <header>
+        <h2>Harry Potter and the Sorcerer’s Stone</h2>
+      </header>
+      <div class="article-grid">
+        <dl class="details">
+          <div><dd>December 12, 2021</dd></div>
+          <div><dd>12-16</dd></div>
+          <div><dd>Fantasy</dd></div>
+          <div><dd>★★★★★</dd></div>
+        </dl>
+        <div class="content">
+          <figure class="cover">
+            <img src="https://picsum.photos/300/420?random=22" alt="Whimsical cover with a young wizard near a castle" width="300" height="420" loading="lazy">
+            <figcaption>Magic, friendship, and a mystery at school.</figcaption>
+          </figure>
+          <section aria-label="Summary">
+            <h3>What it’s about</h3>
+            <p>Harry discovers he’s a wizard and attends Hogwarts, where he confronts a dark threat tied to his past.</p>
+          </section>
+          <section aria-label="Why families like it">
+            <h3>Why it works for families</h3>
+            <ul>
+              <li>Strong friendship and courage themes.</li>
+              <li>Clear hero’s-journey structure keeps readers engaged.</li>
+              <li>Great springboard for discussing choices and consequences.</li>
+            </ul>
+          </section>
+          <section aria-label="Content notes">
+            <h3>Content notes</h3>
+            <p>Mild peril and fantasy combat; intensity rises in later books.</p>
+          </section>
+        </div>
+      </div>
+      <footer class="tags">
+        <span>#magic</span> <span>#school</span> <span>#friendship</span>
+      </footer>
+    </article>
+  </section>
+</main>
+
+  <footer>
+    <p>© <span id="year"></span> Kids Read For Fun</p>
+  </footer>
+  <script>
+    // small nicety: auto update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
