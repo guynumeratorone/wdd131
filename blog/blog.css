@@ -86,13 +86,24 @@ main{ padding-block:0rem 2rem; }
 }
 
 
-/* scaffold for the article two-column grid you’ll build in Step 4 */
+
 .article-grid{
+  position: relative;
   display:grid;
-  grid-template-columns: 240px 1fr;
-  gap:1rem;
-  align-items:start;
-  margin-block:1rem 2rem;
+  grid-template-columns: 190px 1fr;
+  gap: 1rem 1.25rem;
+  align-items: stretch;          /* make both columns equal height */
+  margin-block: 1rem 2rem;
+}
+
+/* the ONE vertical line, extended up/down */
+.article-grid::before{
+  content: "";
+  position: absolute;
+  left: 222.5px;            /* exactly the left column width */
+  top: -3.25rem;          /* extend UP into title area (tweak as needed) */
+  bottom: 0rem;          /* extend DOWN past content (tweak as needed) */
+  border-right: 2px solid var(--gold);
 }
 
 /* article grid polish */
@@ -104,11 +115,73 @@ main{ padding-block:0rem 2rem; }
 .cover img{ display:block; max-width:100%; height:auto; }
 
 
-.details{
-  margin:0;
+/* make each review a 2-col grid that matches the inner article grid */
+.review{
+  display: grid;
+  grid-template-columns: 190px 1fr;  /* left info col | right content col */
+  column-gap: 1rem;
+  align-items: start;
 }
-.details dt{ font-weight:700 }
-.details dd{ margin:0 0 .5rem 0 }
+
+/* put the H2 in the right column so it starts at the rule */
+.review > header{
+  grid-column: 2;
+  margin: 0 0 .5rem;   /* small space under the title */
+}
+
+/* keep the inner grid spanning the full width */
+.article-grid{
+  grid-column: 1 / -1; /* spans both outer columns so details+content line up */
+}
+
+/* (optional) tighten/align the H2 itself */
+.review > header > h2{
+  margin: .15rem 0 .5rem; 
+  text-align: left;        /* ensure not centered across the page */
+}
+
+/* outer layout for each review: left info col | right content col */
+.review{
+  display: grid;
+  grid-template-columns: 190px 1fr;   /* same width as your .article-grid left col */
+  column-gap: 1.25rem;
+  align-items: start;
+}
+
+/* put the title in the right column */
+.review > header{
+  grid-column: 2;
+  margin: 0 0 .5rem;
+}
+
+/* center the title over the content column */
+.review > header > h2{
+  text-align: center;     /* centers within the right column */
+  margin: .25rem auto .5rem;
+  width: 100%;
+}
+
+/* ensure the cover sits centered under the title */
+.article-grid .content{
+  display: grid;
+  justify-items: center;  /* centers the figure/image in the right column */
+}
+
+
+/* left info column: full-height vertical rule */
+.details{
+  margin: 0;
+  align-self: stretch;                /* ensure the column spans the row */
+  border-right: 2px solid var(--gold);
+  padding-right: 1rem;                /* space before the rule */
+  margin-right: 1rem;                 /* gutter after the rule */
+  text-align: right;                  /* values “bind” to the rule */
+  display: flex;                      /* allow internal spacing without collapsing height */
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.details dt{ font-weight: 700; }
+.details dd{ margin: 0 0 .5rem 0; }
 
 footer{
   border-top:2px solid var(--ink);
@@ -128,7 +201,7 @@ footer{
   position: sticky;
   top: 6.5rem;           /* stays tucked under the header while scrolling */
   margin: 0;             /* no layout push on the grid row */
-  transform: translateY(1rem);  /* debugg */
+  transform: translateY(1rem);  
   will-change: transform;
 }
 

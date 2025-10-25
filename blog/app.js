@@ -1,3 +1,4 @@
+console.log('articles in app.js:', window.articles);
 function countStars(stars) {
   if (!stars) return 0;
   // Count either '★' or '*' or '⭐' visually, not by string length
@@ -20,10 +21,10 @@ function articleHTML(a) {
 
     <div class="article-grid">
       <dl class="details">
-        <div><dt>Date</dt><dd>${a.date || '-'}</dd></div>
-        <div><dt>Ages</dt><dd>${a.ages || '-'}</dd></div>
-        <div><dt>Genre</dt><dd>${a.genre || '-'}</dd></div>
-        <div><dt>Rating</dt><dd>${starText(a.stars)}</dd></div>
+        <div><dt></dt><dd>${a.date || '-'}</dd></div>
+        <div><dt></dt><dd>${a.ages || '-'}</dd></div>
+        <div><dt></dt><dd>${a.genre || '-'}</dd></div>
+        <div><dt></dt><dd>${starText(a.stars)}</dd></div>
       </dl>
 
       <div class="content">
@@ -44,11 +45,15 @@ function renderArticles(list) {
   container.innerHTML = list.map(articleHTML).join('');
 }
 
-// Kick it off once DOM is ready and blog.js has loaded.
 document.addEventListener('DOMContentLoaded', () => {
-  if (Array.isArray(window.articles)) {
-    renderArticles(window.articles);
+
+  const DATA = (typeof articles !== 'undefined' && Array.isArray(articles))
+    ? articles
+    : (Array.isArray(window.articles) ? window.articles : []);
+
+  if (DATA.length) {
+    renderArticles(DATA);
   } else {
-    console.warn('No "articles" array found from blog.js');
+    console.warn('No articles array found. Ensure blog.js defines: const articles = [ ... ]');
   }
 });
