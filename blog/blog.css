@@ -169,7 +169,7 @@ main{ padding-block:0rem 2rem; }
 }
 
 
-/* left info column: full-height vertical rule */
+/* the gold bar on the left margin */
 .details{
   margin: 0;
   align-self: stretch;                /* ensure the column spans the row */
