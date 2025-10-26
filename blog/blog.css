@@ -100,11 +100,12 @@ main{ padding-block:0rem 2rem; }
 .article-grid::before{
   content: "";
   position: absolute;
-  left: 222.5px;            /* exactly the left column width */
+  left: 222.01px;            /* exactly the left column width */
   top: -3.25rem;          /* extend UP into title area (tweak as needed) */
   bottom: 0rem;          /* extend DOWN past content (tweak as needed) */
   border-right: 2px solid var(--gold);
 }
+
 
 /* article grid polish */
 .article-grid{
@@ -280,7 +281,10 @@ main{
     justify-content: stretch;
     justify-items: end;
   }
+  
 }
+
+
 
 
 

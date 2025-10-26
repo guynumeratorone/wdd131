@@ -34,7 +34,7 @@ function articleHTML(a) {
         </figure>
       </div>
     </div>
-    <footer class="tags"></footer>
+    
   </article>`;
 }
 
