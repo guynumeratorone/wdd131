@@ -1,0 +1,220 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #222;
+  --muted: #667;
+  --accent: #4c6fff;
+  --shadow: 0 10px 30px rgba(20,30,60,.12);
+  --radius: 16px;
+  --gap: 14px;
+  --card-w: 420px; 
+  --card-h: 260px; 
+
+  /* Overlap tweaks */
+  --overlap-x: 150px;
+  --overlap-y: 75px;
+}
+
+/* Global Reset and Body Styles */
+* { box-sizing: border-box; }
+body { 
+  margin: 0; 
+  font: 16px/1.4 system-ui, Arial, sans-serif; 
+  background: var(--bg); 
+  color: var(--ink); 
+}
+
+/* General Layout */
+.wrap { max-width: 960px; margin: 32px auto; padding: 0 16px; }
+h1 { margin: 0 0 16px; }
+
+/* Card Form Main Grid */
+.card-form {
+  display: grid;
+  /* Default: cards stack; button row last. Overridden in media query. */
+  grid-template-rows: auto auto auto;
+  gap: var(--gap);
+  position: relative;
+}
+
+/* Base Card Styles (Front and Back) */
+.card {
+  width: var(--card-w);
+  height: var(--card-h);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+/* --- General Input Field Styling --- */
+.card-form input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px; /* Base vertical padding for height, and horizontal padding */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px; /* Small space below the label */
+  transition: all 0.2s;
+}
+
+/* Focus style */
+.card-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(76, 111, 255, 0.2);
+}
+
+/* --- Card Front Styles (Consolidated) --- */
+.card-front { 
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;              /* on top */
+  transform: none;         /* stays in the base slot */
+  
+  /* Front Card's internal grid: 3 rows */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr; /* Header, Card Number, Holder/Expiry rows */
+  gap: 12px;
+  align-content: start;
+}
+
+/* Front Card Child Element Placement */
+.card-front .card-image {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  align-self: start;
+}
+
+.card-front .brand {
+  display: none; /* Hidden to match the assignment mockup */
+}
+
+/* Total line on the front card (Top Left) - ADJUSTED FOR SINGLE LINE */
+.card-front .amount {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-start; /* Left-align the content */
+  align-items: baseline;       /* Align text nicely on the same line */
+  /* REMOVED: flex-direction: column; -> defaults to row */
+  gap: 6px; /* Added separation between 'Total:' and '$199' */
+  margin: 0 0 18px 0;
+  font-size: 0.95rem;
+  color: #556;
+  font-family: monospace; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card-front .amount strong{
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* Field Placement for Card Number, Name, and Expiry */
+/* 1. Card Number: Span both columns on the second grid row */
+.card-front .field.number {
+  grid-row: 2;
+  grid-column: 1 / -1; /* spans the full width of row 2 */
+}
+
+/* STYLING FOR CARD NUMBER INPUT */
+.card-front .field.number input {
+  font-family: monospace; /* A common style for card numbers */
+  letter-spacing: 1.5px;
+  padding: 14px 16px;     /* Increased vertical padding for extra height */
+  font-size: 1.25rem;     /* Larger font size */
+}
+
+/* 2. Card Holder Name: Place on the left half of the third grid row */
+.card-front .field.name {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+/* 3. Expiry: Place on the right half of the third grid row */
+.card-front .field.exp {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+
+/* --- Card Back Styles (Consolidated) --- */
+.card-back {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;               /* behind */
+  transform: translate(var(--overlap-x), var(--overlap-y)); /* sits down/right behind */
+
+  /* Back Card's internal grid */
+  display: grid;
+  grid-template-rows: 48px 1fr;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Back Card Child Element Styles */
+.magstripe{ width:100%; height:48px; background:#2b2f3a; border-radius:6px; }
+.card-back .field.cvc{
+  justify-self: end;     /* keep it right-aligned */
+  align-self: end;       /* anchor to the bottom of the grid area */
+  margin-top: auto;      /* push it down if there's extra space */
+  margin-bottom: 6px;    /* small breathing room from the edge */
+  width: 110px;
+}
+.card-back .field.cvc input{
+  width: 60%; 
+}
+
+/* Button and Error Styles (Consolidated) */
+.actions { 
+  grid-row: 2; 
+  margin-top: 20px;
+}
+
+/* Style the button */
+.actions button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(76, 111, 255, 0.3);
+    transition: background-color 0.2s;
+}
+
+.actions button:hover {
+    background-color: #3b5aff;
+}
+
+.errors{ margin:8px 0 0; color:#b00020; font-weight:600; }
+
+
+/* --- Responsive Overrides --- */
+
+/* Breakpoint for side-by-side cards */
+@media (min-width: 820px) {
+  .card-form {
+    /* place both cards overlapping in first row, actions in second */
+    grid-template-rows: auto auto;
+  }
+}
+
+/* Responsive: soften or remove overlap on small screens */
+@media (max-width: 560px){
+  :root{ 
+    --overlap-x: 12px; 
+    --overlap-y: 10px; 
+  }
+}
+
+/* Stack cards completely on very small screens */
+@media (max-width: 420px){
+  .card-back{ transform:none; } 
+}
