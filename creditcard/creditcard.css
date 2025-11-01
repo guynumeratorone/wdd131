@@ -100,7 +100,6 @@ h1 { margin: 0 0 16px; }
   display: flex;
   justify-content: flex-start; /* Left-align the content */
   align-items: baseline;       /* Align text nicely on the same line */
-  /* REMOVED: flex-direction: column; -> defaults to row */
   gap: 6px; /* Added separation between 'Total:' and '$199' */
   margin: 0 0 18px 0;
   font-size: 0.95rem;
