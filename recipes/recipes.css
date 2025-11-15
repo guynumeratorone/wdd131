@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+:root {
+  --primary-color: #1B98E0;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Amatic SC", cursive;
+}
+
+/* ===========================
+   Base / Reset
+   =========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  line-height: 1.5;
+  background-color: #faf5f0; /* or var(--text-light) if you prefer */
+  color: var(--text-dark);
+}
+
+/* ===========================
+   Change images max-width
+   =========================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recipe-card img {
+  width: 50%;
+  max-height: 300px;   /* tweak this number to taste */
+  object-fit: cover;   /* crops edges instead of squishing */
+}
+
+/* Utility class for screen-reader-only text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ===========================
+   Layout: Header
+   =========================== */
+.site-header {
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0d5c8;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.branding img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.site-title h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: var(--secondary-font);
+}
+
+.site-title .tagline {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ===========================
+   Search form
+   =========================== */
+.search {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search input[type="search"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #d0c2af;
+  font-size: 0.95rem;
+}
+
+.search button {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #c96b34;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #a85423;
+}
+
+/* ===========================
+   Main content
+   =========================== */
+main {
+  padding: 1rem 1.25rem 2rem;
+}
+
+/* ===========================
+   Recipe cards (mobile)
+   =========================== */
+#recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.recipe-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e0d5c8;   
+  padding: 1rem;               
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.recipe-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;      
+}
+
+.recipe-content {
+  padding: 0.75rem 0.9rem 1rem;
+}
+
+.recipe-content h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+}
+
+.recipe-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Rating line */
+.recipe-rating {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.icon-star,
+.icon-star-empty {
+  font-size: 1rem;
+  color: #f5a623;
+}
+
+.rating-count {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Description: hidden on small screens (per wireframe) */
+.description {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* “View full recipe” link */
+.details-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #c96b34;
+  text-decoration: none;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   600px+ layout:
+   card becomes horizontal (image left, text right)
+   =========================== */
+@media (min-width: 600px) {
+  .recipe-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .recipe-card img {
+    width: 40%;          /* image on the left */
+    max-width: 280px;    /* don’t let it get huge */
+    margin-bottom: 0;    /* no vertical gap now */
+  }
+
+  .recipe-content {
+    flex: 1;             /* text area fills the rest */
+  }
+
+  /* show descriptions on wider layouts */
+  .description {
+    display: block;
+  }
+}
+
+/* ===========================
+   960px+ layout:
+   center content, limit width
+   =========================== */
+@media (min-width: 960px) {
+  .site-header,
+  main,
+  footer {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Keep header as a vertical stack: logo/title, then search bar */
+  .site-header {
+    display: block;           
+  }
+
+  .search {
+    margin-top: 1rem;         
+    max-width: 100%;          
+  }
+}
+
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  border-top: 1px solid #e0d5c8;
+  padding: 1rem 1.25rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.social img {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-attribution {
+  margin: 0.25rem 0;
+  font-size: 0.7rem;
+  color: #777;
+}
+
+.icon-attribution a {
+  color: inherit;
+}
+
+.copyright {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #555;
+}

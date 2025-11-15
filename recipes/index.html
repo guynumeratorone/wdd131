@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recipe Book</title>
+
+  <!-- Basic SEO meta -->
+  <meta name="description"
+        content="Recipe Book features tasty, easy recipes like sweet potato waffles, chicken curry, desserts, and more.">
+  <meta name="author" content="Joe Allen">
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Recipe Book">
+  <meta property="og:type" content="website">
+  <meta property="og:description"
+        content="Recipe Book features tasty, easy recipes like sweet potato waffles, chicken curry, desserts, and more.">
+  <meta property="og:image"
+        content="https://guynumeratorone.github.io/wdd131/recipes/images/sweet-potato-waffle-md.jpg">
+  <meta property="og:url"
+        content="https://guynumeratorone.github.io/wdd131/recipes/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/recipe-book.png" type="image/png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="recipes.css">
+
+  <!-- JavaScript (required by assignment but we’re not using it yet) -->
+  <script src="main.js" type="module" defer></script>
+</head><body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="images/recipe-book.png" alt="Recipe book logo">
+      <div class="site-title">
+        <h1>Recipe Book</h1>
+      </div>
+    </div>
+
+    <!-- Search form (from the wireframe) -->
+    <form class="search" role="search">
+      <label for="search" class="visually-hidden">Search recipes</label>
+      <input
+        id="search"
+        name="search"
+        type="search"
+        placeholder="Find a Recipe"
+      >
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main id="main">
+    <!-- Recipe list section -->
+    <section id="recipes" aria-label="Recipes">
+ <!-- Sweet Potato Waffles -->
+  <article class="recipe-card">
+    <img
+      src="images/sweet-potato-waffle-md.jpg"
+      alt="Sweet Potato Waffles"
+    >
+    <div class="recipe-content">
+      <h2>Sweet Potato Waffles</h2>
+      <p class="recipe-meta">Waffles • 30 Min • 6 waffles</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 4 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <span class="rating-count">4 / 5</span>
+      </div>
+
+      <p class="description">
+        Savory waffles made with sweet potato and a hint of ginger.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Escalope de Poulet a la Creme -->
+  <article class="recipe-card">
+    <img
+      src="images/escalopes-de-poulet-a-la-creme.webp"
+      alt="Escalope de Poulet a la Creme with steamed green beans"
+    >
+    <div class="recipe-content">
+      <h2>Escalope de Poulet a la Creme</h2>
+      <p class="recipe-meta">Chicken • 20 min • 3 servings</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 4.5 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+        </span>
+        <span class="rating-count">4.5 / 5</span>
+      </div>
+
+      <p class="description">
+        Quick and creamy chicken and rice dish with mustard, mushrooms, and lemon.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Oven Roasted potato slices -->
+  <article class="recipe-card">
+    <img
+      src="images/roasted-potatoes.webp"
+      alt="Oven roasted potato slices"
+    >
+    <div class="recipe-content">
+      <h2>Oven Roasted Potato Slices</h2>
+      <p class="recipe-meta">Potatoes • 30 min</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 4 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <span class="rating-count">4 / 5</span>
+      </div>
+
+      <p class="description">
+        Easy and delicious oven-roasted potatoes that go great with almost anything.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Black Beans and Rice -->
+  <article class="recipe-card">
+    <img
+      src="images/black-beans-and-rice.jpg"
+      alt="Black beans and rice"
+    >
+    <div class="recipe-content">
+      <h2>Black Beans and Rice</h2>
+      <p class="recipe-meta">Southwest • 20 min • 4 servings</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 3 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <span class="rating-count">3 / 5</span>
+      </div>
+
+      <p class="description">
+        Black beans and tomatoes served over a bed of rice, topped with cheese and tortilla chips.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Chicken Curry -->
+  <article class="recipe-card">
+    <img
+      src="images/chicken-curry.webp"
+      alt="Chicken curry"
+    >
+    <div class="recipe-content">
+      <h2>Chicken Curry</h2>
+      <p class="recipe-meta">Chicken • 30 min • 5 servings</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 5 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+        </span>
+        <span class="rating-count">5 / 5</span>
+      </div>
+
+      <p class="description">
+        Quick and easy chicken curry made with simple, easy-to-find ingredients.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Chocolate Chip Cookies -->
+  <article class="recipe-card">
+    <img
+      src="images/chocolate-chip-cookies.jpg"
+      alt="Chocolate chip cookies with coconut"
+    >
+    <div class="recipe-content">
+      <h2>Chocolate Chip Cookies</h2>
+      <p class="recipe-meta">Dessert • 11 min • 8 dozen</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 5 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+        </span>
+        <span class="rating-count">5 / 5</span>
+      </div>
+
+      <p class="description">
+        Delicious soft chocolate chip cookies with shredded coconut.
+      </p>
+
+      <a href="#" class="details-link">View full recipe</a>
+    </div>
+  </article>
+
+  <!-- Gooseberry Cake -->
+  <article class="recipe-card">
+    <img
+      src="images/german-gooseberry-cake.jpg"
+      alt="German gooseberry cake with vanilla cream and crumble"
+    >
+    <div class="recipe-content">
+      <h2>Gooseberry Cake with Vanilla Cream and Crumble</h2>
+      <p class="recipe-meta">Dessert • 45 min • 12 servings</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 5 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+        </span>
+        <span class="rating-count">5 / 5</span>
+      </div>
+
+      <p class="description">
+        Tart-and-sweet gooseberry cake layered with vanilla cream and topped with buttery crumble.
+      </p>
+
+      <a href="https://www.esterkocht.com/german-gooseberry-cake-with-vanilla-cream-and-crumble/" class="details-link">
+        View full recipe
+      </a>
+    </div>
+  </article>
+
+  <!-- Apple Crisp -->
+  <article class="recipe-card">
+    <img
+      src="images/apple-crisp.jpg"
+      alt="Apple crisp with oat crumble"
+    >
+    <div class="recipe-content">
+      <h2>Apple Crisp</h2>
+      <p class="recipe-meta">Dessert • 45 min • 12 servings</p>
+
+      <div class="recipe-rating">
+        <span
+          class="rating"
+          role="img"
+          aria-label="Rating: 4 out of 5 stars"
+        >
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star">★</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <span class="rating-count">4 / 5</span>
+      </div>
+
+      <p class="description">
+        Classic apple crisp with a sweet oat, flour, and brown sugar crumble topping.
+      </p>
+
+      <a href="https://www.allrecipes.com/recipe/12409/apple-crisp-ii/" class="details-link">
+        View full recipe
+      </a>
+    </div>
+  </article>
+
+</section>
+  </main>
+
+  <footer>
+    <!-- Social icons block with attribution comment -->
+    <div class="social">
+      <!-- Social media icons provided under CC from
+           https://www.iconfinder.com/AlfredoCreates -->
+      <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+    </div>
+
+    <!-- Required Flaticon attribution link -->
+    <p class="icon-attribution">
+      <a href="https://www.flaticon.com/free-icons/recipe"
+         title="recipe icons">
+        Recipe icons created by Freepik - Flaticon
+      </a>
+    </p>
+
+    <p class="copyright">
+      &copy; 2025 Recipe Book
+    </p>
+  </footer>
+</body>
+</html>
