@@ -4,14 +4,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Site Plan</title>
-		<link type="text/css" rel="stylesheet" href="site-plan.css" />
+		<link type="text/css" rel="stylesheet" href="styles/site-plan.css" />
 	</head>
 
 	<body>
 		<header>
-			<h1>[Site name] Site Plan</h1>
-			<h2>FirstName LastName</h2>
-			<h2>WDD 131-[section]</h2>
+			<h1>Really Cool Software Thing Site Plan</h1>
+			<h2>Joe Allen</h2>
+			<h2>WDD 131 - A1</h2>
 			<!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 131.03 -->
 		</header>
 		<main>
@@ -19,22 +19,46 @@
 			<hr />
 			<h2>Overview</h2>
 			<h3>Purpose</h3>
-			<p>[Your purpose here]</p>
+			<p>The purpose of this site is to demonstrate a really cool piece of software I have
+				been working on in my spare time and most of this last summer. I am not ready to 
+				launch or really reveal publicly yet but I want to have a site ready to go when I 
+				am.</p>
+			</p>
 			<!-- change this -->
 
 			<h3>Audience</h3>
-			<p>[Your audience here]</p>
+			<p>The primary audience for this project will be people who like automation and AI.
+			   Ideally people who would like to free up their time by removing their mundane tasks. </p>
 			<!-- change this -->
 
 			<h3>Dynamic elements</h3>
-			<p>[Describe dynamic elements provided by Javascript here]</p>
+			<p>
+				JavaScript will power an interactive “Idea Board” and a “Feature Spotlight”
+				gallery. An ES module will export an array of idea objects (with fields such
+				as title, type, description, and upvoteCount) and another array of example
+				“demo features” that represent safe, high-level capabilities of the software.
+				A main module will import this data and render it into cards on the page using
+				DOM manipulation and template functions.
+			</p>
+			<p>
+				Visitors will be able to filter ideas by type (Feature, Bug, Integration,
+				Other) and sort them by newest or highest upvotes using array methods like
+				<code>filter</code>, <code>sort</code>, and <code>map</code>. Each idea card
+				will include an “Upvote” button that increments the upvote count in the
+				underlying object and re-renders the card. A simple form will let users add
+				new ideas for this session only; submitted ideas will be pushed into the ideas
+				array and displayed immediately. Conditional logic will show a friendly
+				message if no ideas match the current filters and will highlight “Popular”
+				ideas (for example, any item with more than 5 upvotes).
+			</p>
 			<!-- change this -->
 
 			<hr />
 			<h2>Branding</h2>
 			<h3>Website Logo</h3>
 			<!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
-			<img src="#" alt="Logo image" />
+			<img src="images/really-cool-software-logo.png"
+				alt="Really Cool Software logo – simple icon representing automation" />
 			<hr />
 			<h2>Style Guide</h2>
 
@@ -46,9 +70,9 @@
 			<!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
 			Palette URL:
 			<a
-				href="https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c"
+				href="https://coolors.co/396e94-B5983F-2b1c2c-aaaabb"
 				target="_blank"
-				>https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c</a
+				>https://coolors.co/396e94-B5983F-2b1c2c-aaaabb</a
 			>
 
 			<table class="colors">
@@ -61,10 +85,10 @@
 					</tr>
 					<!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
 					<tr>
-						<td class="primary">[#396E94]</td>
-						<td class="secondary">[#E7C24F]</td>
-						<td class="accent1">[#A43312]</td>
-						<td class="accent2"></td>
+					<td class="primary">#396E94</td>
+					<td class="secondary">#B5983E</td>
+					<td class="accent1">#2B1C2C</td>
+					<td class="accent2">#AAAABB</td>
 					</tr>
 				</tbody>
 			</table>
@@ -75,29 +99,25 @@
 			<!-- Choose a font for your paragraphs (body copy) and headlines. What font(s) have you chosen? Why did you choose what you did?  Make sure to review the list of web safe fonts at W3Schools.org as a starting point.  Think also about which of your colors above you might use for background and font colors. -->
 
 			<h4>
-				Heading Font: [Font Name here]
+				<h4>Heading Font: IM Fell French Canon SC</h4>
 				<!-- change this -->
 			</h4>
 			<h4>
-				Paragraph Font: [Font Name here]
-				<!-- change this -->
+				<h4>Paragraph Font: Lato</h4>
 			</h4>
-			<h3>Normal paragraph example</h3>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-				mollit anim id est laborum.
+			IM Fell French Canon SC gives the headings a distinctive, slightly formal
+			look that helps Really Cool Software feel like a serious, well-crafted tool.
+			Lato is a clean, modern sans-serif font that is easy to read for body text
+			on both desktop and mobile, which is important for the longer explanations
+			and idea descriptions on the site.
 			</p>
 			<h3>Colored paragraph example</h3>
 			<p class="colored">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+			veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+			commodo consequat.
 			</p>
 
 			<!-- ------------------------Step 10------------------------------ -->
@@ -105,17 +125,80 @@
 			<h3>Navigation</h3>
 			<!-- Think about how you want your navigation bar to look. In the site-plan.css file change the colors to your colors to get the look you desire. -->
 			<nav>
-				<a href="#">Home</a>
-				<a href="#">Page2</a>
-				<a href="#">Page3</a>
+			<a href="#">Home</a>
+			<a href="#">Idea Board</a>
+			<a href="#">Roadmap</a>
 			</nav>
 			<hr />
 
 			<h2>Content</h2>
+
 			<h3>Home page</h3>
-			<p>[content, images, data for the home page]</p>
-			<h3>[Page 2]</h3>
-			<p>[content, images, data for the subpage]</p>
+			<p>
+			The home page will introduce Really Cool Software at a high level without
+			revealing all of its internal details. It will explain that this is a
+			desktop assistant project focused on automation, but emphasize that the
+			site is a preview and idea hub rather than a full product launch.
+			</p>
+			<ul>
+			<li>
+				A hero section with the project name, a short tagline, and a brief
+				paragraph describing the vision of the software.
+			</li>
+			<li>
+				A “Feature Spotlight” area that uses JavaScript to display a small set of
+				safe, high-level example capabilities from a features array (for example:
+				“Launch favorite apps”, “Organize repetitive workflows”, “Capture screen
+				snippets”). This does not expose the real implementation.
+			</li>
+			<li>
+				A simple overview of how visitors can participate: reading the roadmap,
+				submitting ideas, and upvoting suggestions on the Idea Board.
+			</li>
+			<li>
+				At least one image that represents software, automation, or a clean
+				desktop workspace, plus the site logo.
+			</li>
+			</ul>
+
+			<h3>Idea Board (Page 2)</h3>
+			<p>
+				The Idea Board page will be the main interactive part of the site where
+				visitors can view and interact with example ideas and feature suggestions
+				related to Really Cool Software.
+			</p>
+			<ul>
+			<li>
+				A short introduction explaining that this is a preview space for collecting
+				ideas, feedback, and potential future features.
+			</li>
+			<li>
+				A filter area that lets users filter ideas by type (Feature, Bug, Integration,
+				Other) and sort them by newest or highest upvotes. These filters and sorts
+				will be implemented using JavaScript array methods like
+				<code>filter</code> and <code>sort</code>.
+			</li>
+			<li>
+				A dynamically generated list of idea cards created from an array of objects
+				(each idea having properties such as title, type, description, and
+				upvoteCount). Clicking an “Upvote” button on a card will increase its
+				upvoteCount and visually update the card.
+			</li>
+			<li>
+				A small form that lets visitors add a new idea for this session only.
+				Submitting the form will push a new object into the ideas array and
+				re-render the list.
+			</li>
+			<li>
+				Conditional messages, such as a “No ideas match your filters” notice when
+				appropriate, and a highlight (badge or icon) for popular ideas above a
+				certain upvote threshold.
+			</li>
+			<li>
+				At least one relevant image or icon that symbolizes brainstorming,
+				collaboration, or feature requests.
+			</li>
+			</ul>
 			<h2>Wireframes</h2>
 			<p>
 				Create two wireframes for your site. One for each page and list them
@@ -124,17 +207,23 @@
 
 			<h3>Home</h3>
 			<p>
-				[Any additional details about home that the wireframe does not make
-				clear]
+				Need to work more on this. This whole project is just a place holder for somthing
+				else Ive been working on. It is a wough draft to say the least.
 			</p>
-			<img src="#" alt="home page wireframe" />
-
-			<h3>[Page 2]</h3>
+			<img src="images/bad home wireframe.png" alt="home page wireframe" />
 			<p>
-				[Any additional details about page 2 that the wireframe does not make
-				clear]
+				<a href="https://wireframe.cc/pro/ppp/beb3acd13-994496" target="_blank">View Home Wireframe</a>
 			</p>
-			<img src="#" alt="page 2 wireframe" />
+			<p>
+				
+				and 
+				https://wireframe.cc/pro/editor/994496?pageId=6f3d4210-a99e-45ac-a07a-fd4d1dbf64ca
+
+				This page would be used for usered to input and share ideas for features as well as
+				well as usecases for the software.  Users would be able to upvote ideas and sort 
+				them based on as well as upload possible files.
+			</p>
+			<img src="images/slightly better but still bad page 2 wireframe.png" alt="page 2 wireframe" />
 		</main>
 	</body>
 </html>
