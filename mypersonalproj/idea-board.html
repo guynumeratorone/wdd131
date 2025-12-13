@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Idea Board | Really Cool Software</title>
+    <meta
+      name="description"
+      content="Submit and upvote feature ideas for the Really Cool Software desktop assistant preview site."
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="56" height="56" />
+          <span class="brand-name">Really Cool Software</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="idea-board.html" aria-current="page">Idea Board</a>
+          <a class="nav-link" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="spotlight">
+        <div class="container">
+          <header class="section-header">
+            <h1>Idea Board</h1>
+            <p>
+              This is the interactive hub for feature requests, integrations, bug notes, and use cases.
+
+            </p>
+          </header>
+
+          <!-- Controls placeholder (filters/sort/form will go here later) -->
+          <section aria-label="Idea Board controls">
+            <div id="idea-controls"></div>
+          </section>
+
+          <!-- List placeholder (idea cards will render here later) -->
+          <section aria-label="Ideas list">
+            <div id="idea-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img class="footer-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="40" height="40" loading="lazy" />
+          <p class="footer-text">© <span id="year"></span> Really Cool Software</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="idea-board.html">Idea Board</a>
+          <a class="footer-link" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Really Cool Software</title>
+    <meta
+      name="description"
+      content="A preview site for a desktop automation assistant—feature spotlights, roadmap, and an idea board."
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="images/Mylogo2.png"
+            alt="M.AI.A logo"
+            width="56"
+            height="56"
+          />
+          <span class="brand-name">Really Cool Software</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html" aria-current="page">Home</a>
+          <a class="nav-link" href="idea-board.html">Idea Board</a>
+          <a class="nav-link" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 class="hero-title">Automation that gives you time back.</h1>
+            <p class="hero-tagline">
+              A desktop assistant project built to reduce repetitive work—shared here as a preview
+              and an idea hub.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="idea-board.html">View Idea Board</a>
+              <a class="btn btn-secondary" href="roadmap.html">See Roadmap</a>
+            </div>
+
+            <ul class="hero-bullets">
+              <li>High-level feature previews (safe and non-revealing)</li>
+              <li>Community ideas and upvotes</li>
+              <li>Roadmap visibility for what’s coming next</li>
+            </ul>
+          </div>
+
+          <div class="hero-media">
+            <img
+              class="hero-image"
+              src="images/hero-hand-mouse.png"
+              alt="A robotic hand and a human hand reaching toward a computer mouse, representing AI-assisted automation"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURE SPOTLIGHT (structure only; placeholders come later) -->
+      <section class="spotlight">
+        <div class="container">
+          <header class="section-header">
+            <h2>Feature Spotlight</h2>
+            <p>
+              A few safe, high-level examples of what the assistant is designed to help with.
+            </p>
+          </header>
+
+          <!-- JS will render into this grid later -->
+          <div class="spotlight-grid" id="feature-spotlight" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- PARTICIPATION -->
+      <section class="participation">
+        <div class="container">
+          <header class="section-header">
+            <h2>How you can participate</h2>
+            <p>Explore, suggest, and vote on what matters most.</p>
+          </header>
+
+          <div class="participation-grid">
+            <article class="card">
+              <h3>Browse the Roadmap</h3>
+              <p>See the direction of the project and what’s planned next.</p>
+              <a class="text-link" href="roadmap.html">Open Roadmap →</a>
+            </article>
+
+            <article class="card">
+              <h3>Submit an Idea</h3>
+              <p>Add feature requests, integrations, bug notes, or use cases.</p>
+              <a class="text-link" href="idea-board.html">Go to Idea Board →</a>
+            </article>
+
+            <article class="card">
+              <h3>Upvote Favorites</h3>
+              <p>Help prioritize by voting for the most useful ideas.</p>
+              <a class="text-link" href="idea-board.html">Vote on Ideas →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="images/Mylogo2.png"
+            alt="M.AI.A logo"
+            width="40"
+            height="40"
+            loading="lazy"
+          />
+          <p class="footer-text">© <span id="year">2025</span> Really Cool Software</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="idea-board.html">Idea Board</a>
+          <a class="footer-link" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </footer>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>

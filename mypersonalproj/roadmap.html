@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roadmap | Really Cool Software</title>
+    <meta
+      name="description"
+      content="Roadmap for the Really Cool Software desktop assistant preview site."
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="56" height="56" />
+          <span class="brand-name">Really Cool Software</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="idea-board.html">Idea Board</a>
+          <a class="nav-link" href="roadmap.html" aria-current="page">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="spotlight">
+        <div class="container">
+          <header class="section-header">
+            <h1>Roadmap</h1>
+            <p>
+              A high-level preview of what’s planned next. (Details can stay intentionally general.)
+            </p>
+          </header>
+
+          <section aria-label="Roadmap milestones">
+            <article class="card">
+              <h2>Near Term</h2>
+              <ul>
+                <li>Improve stability and usability</li>
+                <li>Expand safe automation templates</li>
+                <li>Better setup and onboarding flow</li>
+              </ul>
+            </article>
+
+            <article class="card" style="margin-top: 1rem;">
+              <h2>Mid Term</h2>
+              <ul>
+                <li>More integrations with common apps</li>
+                <li>Customization and user preferences</li>
+                <li>More “idea board” driven development</li>
+              </ul>
+            </article>
+
+            <article class="card" style="margin-top: 1rem;">
+              <h2>Long Term</h2>
+              <ul>
+                <li>Expanded workflows and automation library</li>
+                <li>Optional local AI support (where appropriate)</li>
+                <li>Polish, accessibility, and performance improvements</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img class="footer-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="40" height="40" loading="lazy" />
+          <p class="footer-text">© <span id="year"></span> Really Cool Software</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="idea-board.html">Idea Board</a>
+          <a class="footer-link" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
