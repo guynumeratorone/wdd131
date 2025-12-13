@@ -15,7 +15,13 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img class="brand-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="56" height="56" />
+          <img
+            class="brand-logo"
+            src="images/Mylogo2.png"
+            alt="M.AI.A logo"
+            width="56"
+            height="56"
+          />
           <span class="brand-name">Really Cool Software</span>
         </a>
 
@@ -33,28 +39,124 @@
           <header class="section-header">
             <h1>Idea Board</h1>
             <p>
-              This is the interactive hub for feature requests, integrations, bug notes, and use cases.
-
+              Submit feature requests, integrations, bug notes, and use cases. Upvote ideas to help
+              prioritize what matters most.
             </p>
           </header>
 
-          <!-- Controls placeholder (filters/sort/form will go here later) -->
-          <section aria-label="Idea Board controls">
-            <div id="idea-controls"></div>
+          <!-- Controls -->
+          <section class="idea-panel" aria-label="Idea Board controls">
+            <div class="idea-controls">
+              <div class="field">
+                <label for="filter-type">Filter by type</label>
+                <select id="filter-type" name="filter-type">
+                  <option value="All">All</option>
+                  <option value="Feature">Feature</option>
+                  <option value="Bug">Bug</option>
+                  <option value="Integration">Integration</option>
+                  <option value="Other">Other</option>
+                  <option value="Use Case">Use Case</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="sort-by">Sort</label>
+                <select id="sort-by" name="sort-by">
+                  <option value="newest">Newest</option>
+                  <option value="upvotes">Highest Upvotes</option>
+                  <option value="title">Title (A–Z)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="search">Search</label>
+                <input id="search" name="search" type="search" placeholder="Search ideas…" />
+              </div>
+            </div>
+
+            <form class="idea-form" id="idea-form" aria-label="Submit a new idea">
+              <h2 class="form-title">Add an idea</h2>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="idea-title">Title</label>
+                  <input id="idea-title" name="title" type="text" required maxlength="60" />
+                </div>
+
+                <div class="field">
+                  <label for="idea-type">Type</label>
+                  <select id="idea-type" name="type" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="Feature">Feature</option>
+                    <option value="Bug">Bug</option>
+                    <option value="Integration">Integration</option>
+                    <option value="Other">Other</option>
+                    <option value="Use Case">Use Case</option>
+                  </select>
+                </div>
+
+                <div class="field field-wide">
+                  <label for="idea-desc">Description</label>
+                  <textarea
+                    id="idea-desc"
+                    name="description"
+                    rows="3"
+                    required
+                    maxlength="220"
+                  ></textarea>
+                  <div class="help">Keep it short and clear (max 220 chars).</div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Submit Idea</button>
+            </form>
           </section>
 
-          <!-- List placeholder (idea cards will render here later) -->
-          <section aria-label="Ideas list">
-            <div id="idea-list"></div>
+          <!-- Two Lists -->
+          <section id="ideas-wrapper" aria-label="Ideas lists">
+            <section class="list-section" id="features-section" aria-label="Features to add">
+              <header class="section-header">
+                <h2>Features to add</h2>
+                <p>Requests, bugs, and integrations you want to see.</p>
+              </header>
+
+              <div id="features-empty" class="empty-state" hidden>
+                No items match your current filters.
+              </div>
+
+              <div id="features-list" class="idea-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="list-section" id="usecases-section" aria-label="Use cases">
+              <header class="section-header">
+                <h2>Use cases</h2>
+                <p>Real examples of “this is what I’ve been doing”.</p>
+              </header>
+
+              <div id="usecases-empty" class="empty-state" hidden>
+                No use cases match your current filters.
+              </div>
+
+              <div id="usecases-list" class="idea-grid" aria-live="polite"></div>
+            </section>
           </section>
         </div>
       </section>
+
+      <script type="module" src="scripts/idea-board.js"></script>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
-          <img class="footer-logo" src="images/Mylogo2.png" alt="M.AI.A logo" width="40" height="40" loading="lazy" />
+          <img
+            class="footer-logo"
+            src="images/Mylogo2.png"
+            alt="M.AI.A logo"
+            width="40"
+            height="40"
+            loading="lazy"
+          />
           <p class="footer-text">© <span id="year"></span> Really Cool Software</p>
         </div>
 

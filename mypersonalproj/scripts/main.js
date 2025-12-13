@@ -8,7 +8,9 @@ function featureCardTemplate(feature) {
 
   return `
     <article class="feature-card">
-      <div class="feature-icon" aria-hidden="true">${feature.icon}</div>
+      <div class="feature-icon" aria-hidden="true">
+        <img src="${feature.icon}" alt="" width="28" height="28" loading="lazy" decoding="async">
+      </div>
       <h3 class="feature-title">${feature.title}</h3>
       <p class="feature-desc">${feature.description}</p>
       <div class="feature-tags">${tagsHtml}</div>
