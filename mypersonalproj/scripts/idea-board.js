@@ -81,17 +81,6 @@ function render() {
   const featuresEmpty = document.getElementById("features-empty");
   const usecasesEmpty = document.getElementById("usecases-empty");
 
-  if (
-    !featuresSection ||
-    !usecasesSection ||
-    !featuresList ||
-    !usecasesList ||
-    !featuresEmpty ||
-    !usecasesEmpty
-  ) {
-    return;
-  }
-
   const visible = getVisibleIdeas();
 
   const visibleFeatures = visible.filter((x) => !isUseCase(x));

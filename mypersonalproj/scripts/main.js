@@ -25,7 +25,7 @@ function renderFeatures(containerId) {
 
   container.innerHTML = features.map(featureCardTemplate).join("");
 
-  // Optional small interaction: click "Learn more" to show an alert
+// Handle "Learn more" clicks
   container.addEventListener("click", (event) => {
     const button = event.target.closest(".feature-btn");
     if (!button) return;
